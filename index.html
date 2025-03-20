@@ -7,11 +7,12 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- google fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -23,171 +24,109 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="History.html">History</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Historical.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reservation.html">Reservations</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-</header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to MCDonald burgers</h1>
-    <p>Experience the Taste of Perfection</p>
-    <a href="#menu" class="btn">Explore Our Menu</a>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero text-center text-white bg-dark py-5">
+        <div class="container">
+            <h1>Welcome to McDonald's Burgers</h1>
+            <p>Experience the Taste of Perfection</p>
+            <a href="Menu.html" class="btn btn-primary mt-3">Explore Our Menu</a>
+        </div>
+    </section>
 
-<section class="about dark-theme">
-  <div class="about-content">
-    <h2>About MCDonald Burger Resturant</h2>
-    <p>Experience the finest gourmet burgers in a cozy and rustic atmosphere.
-         At MCDonald Resturant, we are dedicated to delivering exceptional flavors that
-          will tantalize your taste buds.</p>
-    <p>Our chefs meticulously craft each burger using locally sourced
-         ingredients and unique flavor combinations. From juicy beef patties to mouthwatering
-          vegetarian options, there's something for everyone.</p>
-    <a href="#menu" class="btn">Explore Our Menu</a>
-  </div>
-  <div class="about-image">
-    <img src="about-image.jpg" alt="About Image">
-  </div>
-</section>
+    <!-- About Section -->
+    <section class="about py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2>About McDonald's Burger Restaurant</h2>
+                    <p>Experience the finest gourmet burgers in a cozy and rustic atmosphere. At McDonald's Restaurant, we are dedicated to delivering exceptional flavors that will tantalize your taste buds.</p>
+                    <p>Our chefs meticulously craft each burger using locally sourced ingredients and unique flavor combinations. From juicy beef patties to mouthwatering vegetarian options, there's something for everyone.</p>
+                    <a href="Menu.html" class="btn btn-primary mt-3">Explore Our Menu</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="about-image.jpg" alt="About Image" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Menu Section -->
+    <section class="menu py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Menu</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="burger1.jpg" class="card-img-top" alt="Burger 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic Cheeseburger</h5>
+                            <p class="card-text">A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with a side of crispy fries and milkshake.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="burger2.jpeg" class="card-img-top" alt="Burger 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Double Patty Cheeseburger</h5>
+                            <p class="card-text">A delicious double patty made from quality beef and spices. Topped with avocado, sprouts, and tangy mayo. Served with a side of potato fries and pops nuggets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="burger3.jpeg" class="card-img-top" alt="Burger 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Spicy BBQ Burger</h5>
+                            <p class="card-text">A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapenos, crispy onion rings, and chipotle mayo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="menu">
-  <h2>Our Menu</h2>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="burger1.jpg" alt="Burger 1">
-      <h3>Classic Cheeseburger</h3>
-      <p>A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. 
-        Served with a side of crispy fries and milkshake.</p>
-    </div>
-    <div class="menu-item">
-      <img src="burger2..jpeg" alt="Burger 2">
-      <h3>Double patty cheese burger</h3>
-      <p>A delicious double patty made from quality beef and spices. 
-        Topped with avocado, sprouts, and tangy mayo. Served with a side of potato fries and pops nuggets</p>
-    </div>
-    <div class="menu-item">
-      <img src="burger3.jpeg" alt="Burger 3">
-      <h3>Spicy BBQ Burger</h3>
-      <p>A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce,
-         topped with jalapenos, crispy onion rings, and chipotle mayo.
-         Served with a side of 2 regukar chios, 2 regular pies, 2 milkshakes and 330mm Coke.</p>
-    </div>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="logm.jpg" alt="Logo" class="img-fluid" style="max-width: 150px;">
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <nav>
+                        <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
+                        <a href="menu.html" class="text-white text-decoration-none me-3">Menu</a>
+                        <a href="History.html" class="text-white text-decoration-none me-3">History</a>
+                        <a href="Reservation.html" class="text-white text-decoration-none me-3">Reservations</a>
+                        <a href="feedback.html" class="text-white text-decoration-none">Feedback</a>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <a href="https://www.facebook.com/McDonalds" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/McDonalds" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/McDonalds" class="text-white"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2025 McDonald's. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<section class="reservations">
-  <div class="reservation-form">
-    <h2>Make a Reservation</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-      <textarea name="message" placeholder="Additional Message" rows="5"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</section>
-
-
-<section class="testimonials">
-  <h2>What Our Customers Say</h2>
-  <div class="testimonial">
-    <img src="customer1.jpeg" alt="Customer 1">
-    <p>"The burgers at Berger Hut are simply amazing! The flavors are rich, 
-        and the ingredients are always fresh. It's my go-to place whenever I'm craving a delicious meal."</p>
-    <h4>John Doe</h4>
-  </div>
-  <div class="testimonial">
-    <img src="customer2.jpeg" alt="Customer 2">
-    <p>"Berger Hut never disappoints! The quality of their burgers and 
-        the friendly service make it a top-notch dining experience.
-         I highly recommend it to all burger lovers!"</p>
-    <h4>Jane Smith</h4>
-  </div>
-</section>
-
-
-<section class="gallery">
-  <h2>Gallery</h2>
-  <div class="image-grid">
-    <div class="image-item">
-      <img src="customer experience.jpg" alt="Image 1">
-    </div>
-    <div class="image-item">
-      <img src="gallery2.jpg" alt="Image 2">
-    </div>
-    <div class="image-item">
-      <img src="gallery3.jpg" alt="Image 3">
-    </div>
-    <div class="image-item">
-      <img src="gallery4.jpg" alt="Image 4">
-    </div>
-  </div>
-</section>
-
-<section class="contact">
-  <div class="contact-container">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <div class="info-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>123 Main Street, City, Country</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-phone-alt"></i>
-        <p>+0370 524 4622.</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-envelope"></i>
-        <p>mcDonalds.co.uk.</p>
-      </div>
-    </div>
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-
-
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="logm.jpg" alt="Logo">
-    </div>
-    <nav class="footer-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Menu</a>
-      <a href="#">Reservations</a>
-      <a href="#">Testimonials</a>
-      <a href="#">Gallery</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <p class="footer-text">&copy; 2025 McDonald. All rights reserved.</p>
-</footer>
-
-
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
