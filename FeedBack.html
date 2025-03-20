@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's Burger Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="iconlogo.jpg" alt="McDonald's Logo" width="50">
+                McDonald's
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="History.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="feedback-section">
+    <div class="feedback-container">
+        <h1>We Value Your Feedback</h1>
+        <p>Please let us know how we can improve your experience.</p>
+
+        <form class="feedback-form" action="submit_feedback.php" method="POST">
+            <label for="feedback-name">Full Name:</label>
+            <input type="text" id="feedback-name" name="name" placeholder="Enter your full name" required>
+
+            <label for="feedback-email">Email:</label>
+            <input type="email" id="feedback-email" name="email" placeholder="Enter your email" required>
+
+            <label for="feedback-message">Your Feedback:</label>
+            <textarea id="feedback-message" name="message" placeholder="Enter your feedback" rows="4" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<section class="feedback-media">
+    <div class="media-container">
+        <h2>See What the joy in our customers. They are filled with laughter!!</h2>
+        <div class="media-gallery">
+            <img src="images feedback.jpeg" alt="Customer Feedback 1">
+            <img src="images saying abt us.jpeg" alt="Customer Feedback 2">
+            <video controls>
+                <source src="4935045_Food_Fast Food_3840x2160.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p>Our customers love the experience at McDonald's. 
+            From enjoying delicious meals to relaxing in our
+             comfortable seating, see how our guests are
+              having a great time!
+            </p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 McDonald's. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
