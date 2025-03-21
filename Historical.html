@@ -11,9 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="script.js"></script> <!-- Link JavaScript file -->
 </head>
 <body>
+  <body class="container mt-5 text-center">
+    <h2>🔊 Text-to-Speech</h2>
+    <p id="text">Click below to read the page aloud or only the selected text.</p>
+    <button class="btn btn-primary" onclick="readWholePage()">▶ Read Whole Page</button>
+    <script>
+        function readWholePage() {
+            let utterance = new SpeechSynthesisUtterance(document.body.innerText);
+            speechSynthesis.cancel(); // Stop any ongoing speech
+            speechSynthesis.speak(utterance);
+        }
 
+        function readSelectedText() {
+            let selectedText = window.getSelection().toString();
+            if (selectedText) {
+                let utterance = new SpeechSynthesisUtterance(selectedText);
+                speechSynthesis.cancel(); // Stop any ongoing speech
+                speechSynthesis.speak(utterance);
+            } else {
+                alert("Please select some text to read.");
+            }
+        }
+    </script>
+  </body>
+</body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -35,7 +59,6 @@
             </div>
         </div>
     </nav>
-
   <!-- Timeline Section -->
   <section class="timeline py-5">
     <div class="container">
@@ -54,7 +77,6 @@
                 <img src="Media/Rich&morry founders.jpeg" class="img-fluid rounded" alt="McDonald's Founders">
             </div>
         </div>
-
         <!-- 1948 - The Speedee Service System -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6 text-center">
@@ -67,7 +89,6 @@
                 <p>To promote their efficiency, McDonald's introduced their first-ever mascot, **Speedee,** a smiling chef with a hamburger for a head, symbolizing their commitment to quick service.</p>
             </div>
         </div>
-
         <!-- 1954 - Ray Kroc Joins McDonald's -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
@@ -80,7 +101,6 @@
                 <img src="Media/Ray Kroc.jpeg" class="img-fluid rounded" alt="Ray Kroc">
             </div>
         </div>
-
         <!-- 1968 - The Birth of the Big Mac -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6 text-center">
@@ -93,7 +113,6 @@
                 <p>Today, the Big Mac is **one of McDonald's best-selling items worldwide,** with an estimated **900 million Big Macs sold annually.**</p>
             </div>
         </div>
-
         <!-- 1990 - Expansion to Russia -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
@@ -109,7 +128,7 @@
     </div>
 <!-- Footer -->
 <footer class="footer bg-dark text-white py-4">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
                 <img src="Media/logo3.jpeg" alt="Logo" class="img-fluid" style="max-width: 150px;">
