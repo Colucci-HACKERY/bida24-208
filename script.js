@@ -54,3 +54,26 @@ function speakText() {
         window.speechSynthesis.speak(speech);
     }
 }
+
+function hideAd() {
+    const ad = document.querySelector('.animated-ad');
+    if (ad) {
+        ad.classList.add('hidden');
+    }
+}
+
+function searchMenu() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const menuItems = document.querySelectorAll(".menu-category .card");
+
+    menuItems.forEach(item => {
+        const title = item.querySelector(".card-title").innerText.toLowerCase();
+        const description = item.querySelector(".card-text").innerText.toLowerCase();
+
+        if (title.includes(query) || description.includes(query)) {
+            item.parentElement.style.display = "block"; // Show matching items
+        } else {
+            item.parentElement.style.display = "none"; // Hide non-matching items
+        }
+    });
+}
