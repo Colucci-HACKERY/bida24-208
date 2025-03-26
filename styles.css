@@ -679,6 +679,114 @@ video {
     color: #fff; /* White text on hover */
 }
 
+/* Cart Section */
+.cart-section {
+    background-color: #fff3e0; /* Light yellow background */
+    padding: 50px 0; /* Add spacing around the section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cart-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d52b1e; /* McDonald's red */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.cart-section p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Cart Items */
+#cartItems {
+    background-color: #fff; /* White background for the cart items */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#cartItems .d-flex {
+    border-bottom: 1px solid #ddd; /* Divider between items */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#cartItems .d-flex:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+#cartItems .fw-bold {
+    font-size: 1.2rem;
+    color: #d52b1e; /* McDonald's red */
+}
+
+#cartItems .text-success {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffc107; /* McDonald's yellow */
+}
+
+#cartItems .btn-danger {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    background-color: #d52b1e; /* McDonald's red */
+    border-color: #d52b1e;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#cartItems .btn-danger:hover {
+    background-color: #b2221a; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Total Price */
+#totalPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745; /* Green color for the total price */
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #ffc107; /* McDonald's yellow */
+    border-color: #ffc107;
+    color: #000; /* Black text for contrast */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.btn-danger {
+    background-color: #d52b1e; /* McDonald's red */
+    border-color: #d52b1e;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #b2221a; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .carousel-inner img {
@@ -776,5 +884,19 @@ video {
 
     .feedback-section p {
         font-size: 1rem;
+    }
+
+    #cartItems .d-flex {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    #cartItems .btn-danger {
+        margin-top: 10px;
+    }
+
+    #totalPrice {
+        text-align: center;
+        margin-bottom: 20px;
     }
 }

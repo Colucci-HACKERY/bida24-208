@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <body class="container mt-5 text-center">
+        <!-- Icon-Only Button -->
+        <button class="btn btn-primary rounded-circle p-3 shadow-lg" onclick="readWholePage()" title="Read Aloud">
+            <i class="bi bi-volume-up fs-3"></i> <!-- Bootstrap Speaker Icon -->
+        </button>
+    
+        <script>
+            function readWholePage() {
+                let utterance = new SpeechSynthesisUtterance(document.body.innerText);
+                speechSynthesis.cancel(); // Stop any ongoing speech
+                speechSynthesis.speak(utterance);
+            }
+    
+            function readSelectedText() {
+                let selectedText = window.getSelection().toString();
+                if (selectedText) {
+                    let utterance = new SpeechSynthesisUtterance(selectedText);
+                    speechSynthesis.cancel(); // Stop any ongoing speech
+                    speechSynthesis.speak(utterance);
+                } else {
+                    alert("Please select some text to read.");
+                }
+            }
+        </script>
+    
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    </body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">McDonald's</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FeedBack.html">Feedback</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning text-dark px-3" href="Cart.html">
+                            View Cart <span id="cartCount" class="badge bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Cart Section -->
+    <section class="cart-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Your Cart</h2>
+            <p class="text-center mb-5">Review your selected items and proceed to checkout when you're ready!</p>
+            
+            <!-- Cart Items -->
+            <div id="cartItems" class="mb-4">
+                <!-- Items will be dynamically added here -->
+            </div>
+
+            <!-- Total Price -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-success" id="totalPrice">Total: $0.00</h3>
+                <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to display cart items
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItems = document.getElementById("cartItems");
+            const totalPriceElement = document.getElementById("totalPrice");
+
+            // Clear the cart display
+            cartItems.innerHTML = "";
+
+            // Calculate total price
+            let totalPrice = 0;
+
+            // Display each item in the cart
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+                cartItems.innerHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-3 p-3 border rounded bg-white shadow-sm">
+                        <span class="fw-bold">${item.name}</span>
+                        <span class="text-success">$${item.price.toFixed(2)}</span>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+            });
+
+            // Update total price
+            totalPriceElement.innerText = `Total: $${totalPrice.toFixed(2)}`;
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1); // Remove the item at the specified index
+            localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
+            displayCart(); // Refresh the cart display
+        }
+
+        // Function to clear the cart
+        function clearCart() {
+            if (confirm("Are you sure you want to clear your cart?")) {
+                localStorage.removeItem("cart"); // Clear the cart
+                displayCart(); // Refresh the cart display
+            }
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            alert("Thank you for your purchase!");
+            localStorage.removeItem("cart"); // Clear the cart
+            displayCart(); // Refresh the cart display
+        }
+
+        // Display the cart when the page loads
+        displayCart();
+    </script>
+</body>
+</html>

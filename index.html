@@ -15,16 +15,18 @@
 </head>
 <body>
     <body class="container mt-5 text-center">
-        <h2>🔊 Text-to-Speech</h2>
-        <p id="text">Click below to read the page aloud or only the selected text.</p>
-        <button class="btn btn-primary" onclick="readWholePage()">▶ Read Whole Page</button>
+        <!-- Icon-Only Button -->
+        <button class="btn btn-primary rounded-circle p-3 shadow-lg" onclick="readWholePage()" title="Read Aloud">
+            <i class="bi bi-volume-up fs-3"></i> <!-- Bootstrap Speaker Icon -->
+        </button>
+    
         <script>
             function readWholePage() {
                 let utterance = new SpeechSynthesisUtterance(document.body.innerText);
                 speechSynthesis.cancel(); // Stop any ongoing speech
                 speechSynthesis.speak(utterance);
             }
-
+    
             function readSelectedText() {
                 let selectedText = window.getSelection().toString();
                 if (selectedText) {
@@ -36,7 +38,11 @@
                 }
             }
         </script>
+    
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     </body>
+    
 </body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -55,7 +61,11 @@
                     <li class="nav-item"><a class="nav-link" href="Historical.html">History</a></li>
                     <li class="nav-item"><a class="nav-link" href="Reservation.html">Reservations</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                </ul>
+                    <li class="nav-item"></li>
+                        <a class="nav-link btn btn-warning text-dark px-3" href="Cart.html">
+                            View Cart <span id="cartCount" class="badge bg-danger">0</span>
+                        </a>
+                    </li>
             </div>
         </div>
     </nav>
@@ -88,35 +98,50 @@
         <div class="container">
             <h2 class="text-center mb-4">Our Menu</h2>
             <div class="row g-4">
+                <!-- Classic Cheeseburger -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="Media/burger2..jpeg" class="card-img-top" alt="Burger 1">
+                        <img src="Media/burger2..jpeg" class="card-img-top" alt="Classic Cheeseburger">
                         <div class="card-body">
                             <h5 class="card-title">Classic Cheeseburger</h5>
                             <p class="card-text">A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with a side of crispy fries and milkshake.</p>
+                            <p class="text-success fw-bold">$5.99</p> <!-- Price -->
+                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
+                <!-- Double Patty Cheeseburger -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="Media/burger3.jpeg" class="card-img-top" alt="Burger 2">
+                        <img src="Media/burger3.jpeg" class="card-img-top" alt="Double Patty Cheeseburger">
                         <div class="card-body">
                             <h5 class="card-title">Double Patty Cheeseburger</h5>
                             <p class="card-text">A delicious double patty made from quality beef and spices. Topped with avocado, sprouts, and tangy mayo. Served with a side of potato fries and pops nuggets.</p>
+                            <p class="text-success fw-bold">$7.99</p> <!-- Price -->
+                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
+                <!-- Spicy BBQ Burger -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="Media/burger4.jpeg" class="card-img-top" alt="Burger 3">
+                        <img src="Media/burger4.jpeg" class="card-img-top" alt="Spicy BBQ Burger">
                         <div class="card-body">
                             <h5 class="card-title">Spicy BBQ Burger</h5>
                             <p class="card-text">A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapenos, crispy onion rings, and chipotle mayo.</p>
+                            <p class="text-success fw-bold">$6.99</p> <!-- Price -->
+                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <script>
+        function addToCart() {
+            alert("Item added to cart!");
+        }
+    </script>
     </section>
 <!-- Testimonials Section -->
 <section class="testimonials py-5 bg-light">
