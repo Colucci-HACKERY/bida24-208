@@ -106,7 +106,7 @@
                             <h5 class="card-title">Classic Cheeseburger</h5>
                             <p class="card-text">A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with a side of crispy fries and milkshake.</p>
                             <p class="text-success fw-bold">$5.99</p> <!-- Price -->
-                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
+                            <button class="btn btn-primary w-100" onclick="addToCart('Classic Cheeseburger', 5.99)">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                             <h5 class="card-title">Double Patty Cheeseburger</h5>
                             <p class="card-text">A delicious double patty made from quality beef and spices. Topped with avocado, sprouts, and tangy mayo. Served with a side of potato fries and pops nuggets.</p>
                             <p class="text-success fw-bold">$7.99</p> <!-- Price -->
-                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
+                            <button class="btn btn-primary w-100" onclick="addToCart('Double Patty Cheeseburger', 7.99)">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                             <h5 class="card-title">Spicy BBQ Burger</h5>
                             <p class="card-text">A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapenos, crispy onion rings, and chipotle mayo.</p>
                             <p class="text-success fw-bold">$6.99</p> <!-- Price -->
-                            <button class="btn btn-primary w-100" onclick="addToCart()">Order Now</button> <!-- Order Button -->
+                            <button class="btn btn-primary w-100" onclick="addToCart('Spicy BBQ Burger', 6.99)">Order Now</button> <!-- Order Button -->
                         </div>
                     </div>
                 </div>
@@ -138,8 +138,12 @@
         </div>
     </section>
     <script>
-        function addToCart() {
-            alert("Item added to cart!");
+        let cartCount = 0;
+
+        function addToCart(item, price) {
+            cartCount++;
+            document.getElementById("cartCount").innerText = cartCount;
+            alert(item + " added to cart! Price: $" + price);
         }
     </script>
     </section>

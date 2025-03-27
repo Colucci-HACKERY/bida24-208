@@ -80,32 +80,26 @@ function searchMenu() {
     });
 }
 
+// Initialize cart from localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 // Function to add items to the cart
 function addToCart(itemName, itemPrice) {
-    // Get the existing cart from localStorage or initialize an empty array
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Check if the item already exists in the cart
-    const existingItem = cart.find(item => item.name === itemName);
-    if (existingItem) {
-        alert(`${itemName} is already in your cart!`);
-        return;
-    }
-
     // Add the new item to the cart
     cart.push({ name: itemName, price: itemPrice });
 
     // Save the updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // Update the cart count
+    updateCartCount();
+
     // Notify the user
     alert(`${itemName} has been added to your cart!`);
-    updateCartCount(); // Update the cart count
 }
 
 // Function to update the cart count
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCount = document.getElementById("cartCount");
     if (cartCount) {
         cartCount.innerText = cart.length; // Update the cart count
