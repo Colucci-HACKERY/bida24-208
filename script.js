@@ -165,3 +165,4 @@ function checkout() {
     localStorage.removeItem("cart"); // Clear the cart
     displayCart(); // Refresh the cart display
 }
+
