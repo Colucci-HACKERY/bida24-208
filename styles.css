@@ -9,6 +9,9 @@ body {
 
 /* Navbar Styles */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
     background-color: #343a40; /* Dark background for the navbar */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
